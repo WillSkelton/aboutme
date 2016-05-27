@@ -1,6 +1,6 @@
 
-
-var wantsToPlay = prompt("Would you like to play a game? (Yes/no)").toLowerCase();
+var userName = prompt("Hello! What's your name?");
+var wantsToPlay = prompt("Hello " + userName + "!. Would you like to play a game? (Yes/no)").toLowerCase();
 if (wantsToPlay === "yes") {
 	var score = 0;
 	var userGuess = prompt("Poor people have it. Rich people need it. If you eat it you die. What is it? ").toLowerCase();
