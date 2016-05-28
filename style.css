@@ -29,8 +29,28 @@ header h1{
 
 }
 #resume{
-	background-color: #93CC81;
+	background-color: #7AAB6A;
 	border-radius: 5px;
 	padding: 10px;
-	margin-top: 20px; 
+	margin-top: 20px;
+}
+
+
+.connect img{
+
+	margin: 20px;
+	height: 50px;
+	width: 50px;
+}
+.connect{
+
+	background-color: black;
+	width: 300px;
+	position:relative;
+
+}
+.connect p{
+	text-align: center;
+	color: white;
+	padding: 10px;
 }
