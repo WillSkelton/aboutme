@@ -44,7 +44,8 @@ header h1{
 }
 .connect{
 
-	position: relative;
+	z-index: 1;
+	position: fixed;
 	background-color: black;
 	width: 300px;
 	border-radius: 5px;
