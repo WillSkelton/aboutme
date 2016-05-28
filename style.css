@@ -12,9 +12,10 @@ header{
 }
 
 header a{
-
+	background-color: #3D9EE3;
 	color: black;
 	text-decoration: none;
+
 
 }
 header a:hover{
@@ -25,3 +26,11 @@ header a:hover{
 header h1{
 
 	position: relative;
+
+}
+#resume{
+	background-color: #93CC81;
+	border-radius: 5px;
+	padding: 10px;
+	margin-top: 20px; 
+}
