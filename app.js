@@ -6,31 +6,31 @@ if (wantsToPlay === "yes") {
 	var userGuess = prompt("Poor people have it. Rich people need it. If you eat it you die. What is it? ").toLowerCase();
 	if(userGuess === "nothing"){
 		score++;
-		alert("Correct");
+		alert("Correct. Score: " + score);
 	}
 
 	var userGuess = prompt("I'm tall when I'm young and I'm short when I'm old. What am I?").toLowerCase();
 	if (userGuess === "candle"){
-		alert("Correct");
 		score++;
+		alert("Correct. Score: " + score);
 	}
 	var userGuess = prompt("Mary's father has 5 daughters - Nana, Nene, Nini, Nono. What is the fifth daughters name?").toLowerCase();
 	if (userGuess === "mary"){
-		alert("Correct");
 		score++;
+		alert("Correct. Score: " + score);
 	}
 
 	alert("Now, let's play another game.");
 
-	var numGuesses = 6;
+	var numGuesses = 4;
 
 	while(numGuesses > 0){
 		var userGuess = prompt(" How old am I? (you have " + numGuesses + " guesses left.)");
 
 
 		if(userGuess == 19){
-			alert("That's it. I'm 19.");
 			score++;
+			alert("That's it. I'm 19. Score: " + score);
 			break;
 		}
 		else if (userGuess > 19) {
@@ -54,20 +54,20 @@ if (wantsToPlay === "yes") {
 
 	numGuesses = 6;
 	while(numGuesses > 0){
-		userGuess = ("Guess one of the states that I've lived in. ");
+		userGuess = prompt("Guess one of the states that I've lived in. ").toLowerCase();
 		if(states.indexOf(userGuess) != -1){
-				alert("Yep, I lived in " + userGuess);
-				score++;
-				break;
+			score++;
+			alert("Yep, I lived in " + userGuess + ". Score: " + score);
+			break;
 		}
 		else if (userGuess === "massachusetts") {
-			alert("Nope. But my parents met in boston and my middle name is Fenway. You have " + numGuesses + " guesses left.")
+			numGuesses--;
 			score += 0.5;
-
+			alert("Nope. But my parents met in boston and my middle name is Fenway. You have " + numGuesses + " guesses left.  Score: " + score)
 		}
 		else {
-			alert("Nope. You have " + numGuesses + " guesses left.");
 			numGuesses--;
+			alert("Nope. You have " + numGuesses + " guesses left.");
 		}
 
 
@@ -77,7 +77,7 @@ if (wantsToPlay === "yes") {
 
 
 
-	alert("You guessed " + score + " out of 6 correct answers. congratulations!")
+	alert("You guessed " + score + " out of 5 correct answers. Congratulations!")
 
 
 }
