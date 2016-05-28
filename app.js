@@ -48,36 +48,7 @@ if (wantsToPlay === "yes") {
 
 	}
 
-	alert("Now for one more game.");
-
-	var states = ["washington", "ohio", "michigan", "idaho"];
-
-	numGuesses = 6;
-	while(numGuesses > 0){
-		userGuess = prompt("Guess one of the states that I've lived in. ").toLowerCase();
-		if(states.indexOf(userGuess) != -1){
-			score++;
-			alert("Yep, I lived in " + userGuess + ". Score: " + score);
-			break;
-		}
-		else if (userGuess === "massachusetts") {
-			numGuesses--;
-			score += 0.5;
-			alert("Nope. But my parents met in boston and my middle name is Fenway. You have " + numGuesses + " guesses left.  Score: " + score)
-		}
-		else {
-			numGuesses--;
-			alert("Nope. You have " + numGuesses + " guesses left.");
-		}
-
-
-	}
-	alert("Correct answers: " + states);
-
-
-
-
-	alert("You guessed " + score + " out of 5 correct answers. Congratulations!")
+	
 
 
 }
