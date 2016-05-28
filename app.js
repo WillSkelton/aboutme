@@ -22,5 +22,6 @@ if (wantsToPlay === "yes") {
 
 
 	alert("You guessed " + score + " out of 3 correct answers. congratulations!")
+	
 
 }
