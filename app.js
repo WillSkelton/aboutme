@@ -28,6 +28,7 @@ if (wantsToPlay === "yes") {
 		var userGuess = prompt(" How old am I? (you have " + numGuesses + " guesses left.)");
 
 
+
 		if(userGuess == 19){
 			score++;
 			alert("That's it. I'm 19. Score: " + score);
