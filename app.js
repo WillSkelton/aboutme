@@ -72,7 +72,13 @@ if (wantsToPlay === "yes") {
 
 
 	}
-	alert("Correct answers: " + states);
+
+	var homeStates = [];
+	for(var i = 0; i < states.length; I++){
+		homeStates += states[i] + " ";
+
+	}
+	alert("Correct answers: " + homeStates);
 
 
 
