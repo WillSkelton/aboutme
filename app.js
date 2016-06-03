@@ -29,7 +29,7 @@ if (wantsToPlay === "yes") {
 
 
 
-		if(userGuess == 19){
+		if(parseInt(userGuess) === 19){
 			score++;
 			alert("That's it. I'm 19. Score: " + score);
 			break;
@@ -74,7 +74,7 @@ if (wantsToPlay === "yes") {
 	}
 
 	var homeStates = [];
-	for(var i = 0; i < states.length; I++){
+	for(var i = 0; i < states.length; i++){
 		homeStates += states[i] + " ";
 
 	}
