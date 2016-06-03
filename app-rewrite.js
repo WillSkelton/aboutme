@@ -17,22 +17,25 @@ function askRiddle(riddle, rightAnswer, numGuesses){
 }
 
 function guessAge(riddle, rightAnswer, numGuesses){
-	var userInput = prompt(riddle);
-	if (parseInt(userInput) === rightAnswer){
-		score++;
-		alert("Correct. Score: " + score + ".");
-	}
-	else if (parseInt(userInput) < rightAnswer) {
-		numGuesses--;
-		alert("Nope. Too low. You have " + numGuesses + " guesses left.");
-	}
-	else if (parseInt(userInput) > rightAnswer) {
-		numGuesses--;
-		alert("Nope. Too high. You have " + numGuesses + " guesses left.");
-	}
-	else {
-		numGuesses--;
-		alert("'" + userInput + "' is not a number. Score: " + score + ".");
+	while(numGuesses > 0){
+		var userInput = prompt(riddle);
+		if (parseInt(userInput) === rightAnswer){
+			score++;
+			alert("Correct. Score: " + score + ".");
+			break;
+		}
+		else if (parseInt(userInput) < rightAnswer) {
+			numGuesses--;
+			alert("Nope. Too low. You have " + numGuesses + " guesses left.");
+		}
+		else if (parseInt(userInput) > rightAnswer) {
+			numGuesses--;
+			alert("Nope. Too high. You have " + numGuesses + " guesses left.");
+		}
+		else {
+			numGuesses--;
+			alert("'" + userInput + "' is not a number. Score: " + score + ". You have " + numGuesses + " guesses left.");
+		}
 	}
 }
 // asks user if they want to play
@@ -89,20 +92,38 @@ var userGuess;
 var riddle1 = "Poor people have it. Rich people need it. If you eat it you die. What is it? ";
 var riddle2 = "I'm tall when I'm young and I'm short when I'm old. What am I?";
 var riddle3 = "Mary's father has 5 daughters - Nana, Nene, Nini, Nono. What is the fifth daughters name?";
+var adondeEsta = "Name a state that I've lived in.";
 var ageRiddle = "How old am I?";
 var validStates = ["washington", "ohio", "michigan", "idaho"];
-var answers = ["nothing", "candle", "mary", 19, stateArray]
+
+var questions = [riddle1, riddle2, riddle3, ageRiddle, adondeEsta]
+var answers = ["nothing", "candle", "mary", 19, validStates];
 
 
 getUserName();
 
 if(askToPlay(wantsToPlay)){
 
-	askRiddle(riddle1, answers[0], 6);
-	askRiddle(riddle2, answers[1], 6);
-	askRiddle(riddle3, answers[2], 6);
-	guessAge(ageRiddle, answers[3], 4);
+	// askRiddle(riddle1, answers[0], 6);
+	// askRiddle(riddle2, answers[1], 6);
+	// askRiddle(riddle3, answers[2], 6);
+	//
+	// guessAge(ageRiddle, answers[3], 4);
+	//
+	// guessState(adondeEsta, answers[4], 6);
 
-	guessState("Name a state that I've lived in.", answers[4], 6);
-	alert("Valid answers were: " + printStates(answers[4]));
+
+	for (var i = 0; i < questions.length; i++){
+		if(i <= 2){
+			askRiddle(questions[i], answers[i], 6);
+		}
+		else if (i === 3){
+			guessAge(questions[i], answers[i], 4);
+		}
+		else{
+			guessState(questions[i], answers[i], 6);
+			alert("Valid answers were: " + printStates(answers[4]));
+		}
+	}
+
 }
