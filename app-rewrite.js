@@ -104,11 +104,26 @@ getUserName();
 
 if(askToPlay(wantsToPlay)){
 
-	askRiddle(riddle1, answers[0], 6);
-	askRiddle(riddle2, answers[1], 6);
-	askRiddle(riddle3, answers[2], 6);
-	guessAge(ageRiddle, answers[3], 4);
+	// askRiddle(riddle1, answers[0], 6);
+	// askRiddle(riddle2, answers[1], 6);
+	// askRiddle(riddle3, answers[2], 6);
+	//
+	// guessAge(ageRiddle, answers[3], 4);
+	//
+	// guessState(adondeEsta, answers[4], 6);
 
-	guessState(adondeEsta, answers[4], 6);
-	alert("Valid answers were: " + printStates(answers[4]));
+
+	for (var i = 0; i < questions.length; i++){
+		if(i <= 2){
+			askRiddle(questions[i], answers[i], 6);
+		}
+		else if (i === 3){
+			guessAge(questions[i], answers[i], 4);
+		}
+		else{
+			guessState(questions[i], answers[i], 6);
+			alert("Valid answers were: " + printStates(answers[4]));
+		}
+	}
+
 }
