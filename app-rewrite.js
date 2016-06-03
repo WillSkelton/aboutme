@@ -91,17 +91,18 @@ var riddle2 = "I'm tall when I'm young and I'm short when I'm old. What am I?";
 var riddle3 = "Mary's father has 5 daughters - Nana, Nene, Nini, Nono. What is the fifth daughters name?";
 var ageRiddle = "How old am I?";
 var validStates = ["washington", "ohio", "michigan", "idaho"];
+var answers = ["nothing", "candle", "mary", 19, stateArray]
 
 
 getUserName();
 
 if(askToPlay(wantsToPlay)){
 
-	// askRiddle(riddle1, "nothing", 6);
-	// askRiddle(riddle2, "candle", 6);
-	// askRiddle(riddle3, "mary", 6);
-	guessAge(ageRiddle, 19, 4);
+	askRiddle(riddle1, answers[0], 6);
+	askRiddle(riddle2, answers[1], 6);
+	askRiddle(riddle3, answers[2], 6);
+	guessAge(ageRiddle, answers[3], 4);
 
-	guessState("Name a state that I've lived in.", validStates, 6);
-	alert("Valid answers were: " + printStates(validStates));
+	guessState("Name a state that I've lived in.", answers[4], 6);
+	alert("Valid answers were: " + printStates(answers[4]));
 }
