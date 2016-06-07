@@ -50,7 +50,7 @@ function askToPlay(userInput){
 // sanitizes input and checks to see if userGuess is in the array of valid answers
 guessState = function(question, stateArray, numGuesses){
 	while(numGuesses > 0){
-		var userInput = prompt(question);
+		var userInput = prompt(question).toLowerCase();
 		if(stateArray.indexOf(userInput) != -1){
 			score++;
 			alert("Yep, I lived in " + userInput + ". Score: " + score + ".");
