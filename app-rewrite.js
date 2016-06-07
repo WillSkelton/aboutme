@@ -1,37 +1,47 @@
 // sanitizes input compares user's answer to correct answer
 function askRiddle(riddle, rightAnswer, numGuesses){
 
+	// While user has guesses left
 	while(numGuesses > 0){
 		var userInput = prompt(riddle);
+		//if user is correct, increases score, alerts user, and breaks
 		if(userInput.toLowerCase() === rightAnswer){
 			score++;
 			alert("Correct. Score: " + score + ".");
 			break;
+		// if incorrect, decrease number of guesses, and then go back through the loop
 		}else {
 			numGuesses--;
 			alert("False. '" + userInput + "' is incorrect. You have " + numGuesses + " guesses left.");
 		}
 	}
+
+	// Gives the user the right answer
 	alert("The correct answer was: " + rightAnswer + ".")
 
 }
-
+// asks the user to guess my age
 function guessAge(riddle, rightAnswer, numGuesses){
 	while(numGuesses > 0){
 		var userInput = prompt(riddle);
+
+		//If correct
 		if (parseInt(userInput) === rightAnswer){
 			score++;
 			alert("Correct. Score: " + score + ".");
 			break;
 		}
+		// Too low
 		else if (parseInt(userInput) < rightAnswer) {
 			numGuesses--;
 			alert("Nope. Too low. You have " + numGuesses + " guesses left.");
 		}
+		// Too high
 		else if (parseInt(userInput) > rightAnswer) {
 			numGuesses--;
 			alert("Nope. Too high. You have " + numGuesses + " guesses left.");
 		}
+		// not a number
 		else {
 			numGuesses--;
 			alert("'" + userInput + "' is not a number. Score: " + score + ". You have " + numGuesses + " guesses left.");
@@ -102,16 +112,8 @@ var answers = ["nothing", "candle", "mary", 19, validStates];
 
 getUserName();
 
+// if the user wants to play, asks questions
 if(askToPlay(wantsToPlay)){
-
-	// askRiddle(riddle1, answers[0], 6);
-	// askRiddle(riddle2, answers[1], 6);
-	// askRiddle(riddle3, answers[2], 6);
-	//
-	// guessAge(ageRiddle, answers[3], 4);
-	//
-	// guessState(adondeEsta, answers[4], 6);
-
 
 	for (var i = 0; i < questions.length; i++){
 		if(i <= 2){
